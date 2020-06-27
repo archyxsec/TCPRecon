@@ -7,6 +7,12 @@ from termcolor import colored
 from argparse import ArgumentParser
 import os
 
+def logo():
+   print(colored("+-----------------------+",'blue'))
+   print(colored("|",'blue'),colored("TCPRecon by BlaZzes10",'red'),colored("|",'blue'))
+   print(colored("+-----------------------+",'blue'))
+
+
 def parserargs():
    parser = ArgumentParser(description='%(prog)s is a port scanner')
    parser.add_argument('-i','--ip', help="ip to scan", type=str)
@@ -77,6 +83,7 @@ def scan_ports(host_ip, delay):
     print(colored("+-----+",'blue'))
 
 def main():
+    logo()
     parser = parserargs()
     args = parser.parse_args()
 
